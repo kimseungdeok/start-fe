@@ -1,13 +1,13 @@
 // 2주차 실습
 
-var name = 'seungdeok';
-console.log(name); // 이름을 찍는다.
+var name1 = 'seungdeok';
+console.log(name1); // 이름을 찍는다.
 
-name = 111;
+name1 = 111;
 var age = 26;
 var isMan = 'true' // 문자열
 var isMan1 = true // 불린형
-var message = 'hello' + name;
+var message = 'hello' + name1;
 
 console.log(isMan);
 console.log(isMan1);
@@ -37,3 +37,6 @@ var person = {
 
 
 person.sayHello();
+
+month = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+
