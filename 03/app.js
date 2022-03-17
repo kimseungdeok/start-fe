@@ -149,44 +149,75 @@
 
 // console.log(result); // true
 
-var todos = ['운동']
+// var todos = ['운동']
 
-function create(todo) {
-    todos.push(todo)
-    console.log(todos)
-}
+// function create(todo) {
+//     todos.push(todo)
+//     console.log(todos)
+// }
 
-create('게임');
+// create('게임');
 
-function read(){
-    console.log(todos)
-}
+// function read(){
+//     console.log(todos)
+// }
 
-read();
+// read();
 
-function update(oldTodo, newTodo){
-    for(var i = 0; i < todos.length; i++){
-        if(todos[i]===oldTodo){
-            todos.splice(i, 1);
-            todos.push(newTodo)
-            i--;
-        }
+// function update(oldTodo, newTodo){
+//     for(var i = 0; i < todos.length; i++){
+//         if(todos[i]===oldTodo){
+//             todos.splice(i, 1);
+//             todos.push(newTodo)
+//             i--;
+//         }
+//     }
+//     console.log(todos);
+// }
+// update('게임', '공부');
+
+// function Delete(oldTodo){
+//     for(var i = 0; i < todos.length; i++){
+//         if(todos[i]===oldTodo){
+//             todos.splice(i, 1);
+//             i--;
+//         }
+//     }
+//     console.log(todos);
+// }
+// Delete('게임')
+
+// var count = [10,20,30,40,50,60,70,100];
+// sum = 0;
+// for(var i = 0; i < count.length; i++){
+//     sum += count[i];
+// }
+
+// console.log(sum/count.length)
+
+// function multipleNine(){
+//     for(var i = 1; i < 10; i++){
+//         for(var j = 1; j < 10; j++){
+//             console.log(i, 'x', j,'=', i*j)
+//         }
+//     }
+// }
+
+// var count = window.prompt('몇 개의 숫자를 더할까요?')
+// var sum = 0;
+
+// for(i=0;i<count;i++){
+//     var num = window.prompt('숫자를 입력해주세요.')
+//     realNum = parseInt(num)
+//     sum += realNum;
+
+// }
+// console.log(sum)
+
+var obj = {
+    do:function(){
+        console.log('메소드가 포함된 객체')
     }
-    console.log(todos);
 }
-update('게임', '공부');
 
-function Delete(oldTodo){
-    for(var i = 0; i < todos.length; i++){
-        if(todos[i]===oldTodo){
-            todos.splice(i, 1);
-            i--;
-        }
-    }
-    console.log(todos);
-}
-Delete('게임')
-
-
-
-
+obj.do();
