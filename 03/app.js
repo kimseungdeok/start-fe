@@ -143,8 +143,50 @@
 //     //코드
 // })();
 
-var text = 'abc def ghi jkl abc def'; // 대상 문자열
-var testReg = /abc/; // 찾을 문자열
-var result = testReg.test(text);
+// var text = 'abc def ghi jkl abc def'; // 대상 문자열
+// var testReg = /abc/; // 찾을 문자열
+// var result = testReg.test(text);
 
-console.log(result); // true
+// console.log(result); // true
+
+var todos = ['운동']
+
+function create(todo) {
+    todos.push(todo)
+    console.log(todos)
+}
+
+create('게임');
+
+function read(){
+    console.log(todos)
+}
+
+read();
+
+function update(oldTodo, newTodo){
+    for(var i = 0; i < todos.length; i++){
+        if(todos[i]===oldTodo){
+            todos.splice(i, 1);
+            todos.push(newTodo)
+            i--;
+        }
+    }
+    console.log(todos);
+}
+update('게임', '공부');
+
+function Delete(oldTodo){
+    for(var i = 0; i < todos.length; i++){
+        if(todos[i]===oldTodo){
+            todos.splice(i, 1);
+            i--;
+        }
+    }
+    console.log(todos);
+}
+Delete('게임')
+
+
+
+
