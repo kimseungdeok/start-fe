@@ -47,16 +47,16 @@
 
 // 구문
 // // if 문
-var isMan = true;
-var gender = '';
+// var isMan = true;
+// var gender = '';
 
-if (isMan) {
-    gender = '남자'
-} else {
-    gender = '여자'
-}
+// if (isMan) {
+//     gender = '남자'
+// } else {
+//     gender = '여자'
+// }
 
-var gender = isMan ? '남자' : '여자'; // 삼항 연산자
+// var gender = isMan ? '남자' : '여자'; // 삼항 연산자
 
 // // for 문
 // for (var count = 0; count < 5; count++) {
@@ -80,38 +80,71 @@ var gender = isMan ? '남자' : '여자'; // 삼항 연산자
 // console.log(result)
 
 // 주요 전역 함수
-alert('alert');
+// alert('alert');
 
-var who = prompt('당신은 누구세요?');
+// var who = prompt('당신은 누구세요?');
 
-var isDelete = confirm('삭제하시겠습니까?');
-if(isDelete){
-    // ... 
-}
+// var isDelete = confirm('삭제하시겠습니까?');
+// if(isDelete){
+//     // ... 
+// }
 
-if(confirm('삭제하시겠습니까?')){
-// ... 
-}
+// if(confirm('삭제하시겠습니까?')){
+// // ... 
+// }
 
-var enc = encodeURIComponent('카카오');
-decodeURIComponent(enc);
+// var enc = encodeURIComponent('카카오');
+// decodeURIComponent(enc);
 
-isNaN('1'); //숫자 인지 아닌지 확인 
+// isNaN('1'); //숫자 인지 아닌지 확인 
 
-parseInt('12');
-parseInt('09', 10); //항상 두번째 인자 주는 습관
-parseFloat('10.33');
+// parseInt('12');
+// parseInt('09', 10); //항상 두번째 인자 주는 습관
+// parseFloat('10.33');
 
-function test() {
-    console.log('test()');
-}
+// function test() {
+//     console.log('test()');
+// }
 
-var id = setTimeout(test, 1000); //1초후 1번실행
+// var id = setTimeout(test, 1000); //1초후 1번실행
 
-var id = setInterval(test, 1000); //1초마다 계속 실행
+// var id = setInterval(test, 1000); //1초마다 계속 실행
 
-//setInterval 보다 나은 방법
-function test() {
-console.log('test()');
-setTimeout(test, 1000);
-}
+// //setInterval 보다 나은 방법
+// function test() {
+// console.log('test()');
+// setTimeout(test, 1000);
+// }
+
+// var nick = 'aji'; //전역변수
+
+// function test() {
+//   var age = 30; //지역변수
+//   console.log(nick, age);
+// }
+
+// test();
+// console.log(age);
+
+// function sum(a, b) {
+//     return a + b;
+// }
+// console.log(sum(1, 3));
+
+// // 익명 함수표현식
+// var car = function() {
+//     //코드
+// };
+
+// //중첩함수
+
+// // 익명 즉시실행함수, 스코프 보호
+// (function() {
+//     //코드
+// })();
+
+var text = 'abc def ghi jkl abc def'; // 대상 문자열
+var testReg = /abc/; // 찾을 문자열
+var result = testReg.test(text);
+
+console.log(result); // true
