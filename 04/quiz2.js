@@ -1,27 +1,28 @@
-var $board = document.getElementById("board");
-var boardCount = 16;
-var isWhite = false;
-var className = 'black'
-var boardLineCount = 4;
+var $select = null;
 
-var str = '';
-for(var i=0; i<boardCount; i++){
-    className = (isWhite) ? 'black': 'white';
-     
-    str += '<span class="'+className+'"></span>'
 
-    isWhite = !isWhite;
+function printBoards(){
+    var $board = document.getElementById("board");
+    var boardCount = 16;
+    var isWhite = false;
+    var className = 'black'
+    var boardLineCount = 4;
+    var str = '';
+    for(var i=0; i<boardCount; i++){
+        className = (isWhite) ? 'black': 'white';
+        
+        str += '<span class="'+className+'"></span>'
 
-    if(i % boardLineCount === 3) {
         isWhite = !isWhite;
+
+        if(i % boardLineCount === boardLineCount - 1) {
+            isWhite = !isWhite;
+        }
     }
+    $board.innerHTML = str;
 }
 
-$board.innerHTML = str;
 
-var $boards = document.querySelectorAll('span');
-var boardLength = $boards.length;
-var $select = null;
 
 function select(event) {
     if($select) {
@@ -33,6 +34,14 @@ function select(event) {
     $select = el;
 }
 
-for(var i = 0; i < boardLength; i++) {
-    $boards[i].addEventListener('click', select);
+function addEvent(){
+    var $boards = document.querySelectorAll('span');
+    var boardLength = $boards.length;
+    for(var i = 0; i < boardLength; i++) {
+        $boards[i].addEventListener('click', select);
+    }
 }
+
+printBoards();
+addEvent()
+
