@@ -30,6 +30,7 @@ function next(){
     printImg(page);
 }
 
+printImg(page)
 $btnPrev.addEventListener('click', prev);
 $btnNext.addEventListener('click', next);
 
@@ -50,7 +51,6 @@ function printImg(page) {
             str += '<img src="'+todayPhoto[i].img+'"> ';
         }
     }
-
     $wrap.innerHTML = str;
     $page.innerHTML = page;
     $totalPage.innerHTML = totalPage;
