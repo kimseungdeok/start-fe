@@ -2,7 +2,7 @@ var $select = null;
 
 
 function printBoards(){
-    var $board = document.getElementById("board");
+    var $wrap = document.querySelector('.wrap')
     var boardCount = 16;
     var isWhite = false;
     var className = 'black'
@@ -19,7 +19,7 @@ function printBoards(){
             isWhite = !isWhite;
         }
     }
-    $board.innerHTML = str;
+    $wrap.innerHTML = str;
 }
 
 
@@ -43,5 +43,5 @@ function addEvent(){
 }
 
 printBoards();
-addEvent()
+addEvent();
 
