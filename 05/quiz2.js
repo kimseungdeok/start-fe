@@ -22,8 +22,6 @@ function printBoards(){
     $wrap.innerHTML = str;
 }
 
-
-
 function select(event) {
     if($select) {
         $select.className = $select.className.replace(' select', '')
