@@ -1,40 +1,42 @@
+const area = document.querySelector('.area');
 const box = document.getElementById('box');
 
-const clientRect = box.getBoundingClientRect();
+const {width:areaWidth, height:areaHeight} = area.getBoundingClientRect();
+const {width:boxWidth, height:boxHeight} = box.getBoundingClientRect();
+
+console.log(areaWidth, areaHeight, boxWidth, boxHeight);
 
 let isDragging = null;
 let originX = null;
 let originY = null;
-let mouseX = null;
-let mouseY = null;
+let originLeft = null;
+let originTop = null;
 
-console.log(clientRect)
-
-box.addEventListener('mousedown', getLocation)
-
-function getLocation(){
+box.addEventListener('mousedown', (e) => {
     isDragging = true;
-    originX = clientRect.x;
-    originY = clientRect.y;
-    console.log(originX, originY);
-    
-}
+    originX = e.clientX;
+    originY = e.clientY;
+    originLeft = box.offsetLeft;
+    originTop = box.offsetTop;
+    console.log(originX, originY, originLeft,originTop);
+});
 
-function unclickMouse(){
+
+
+box.addEventListener('mouseup', (e)=> {
     isDragging = false;
-}
-
-
-box.addEventListener('mouseup', unclickMouse)
+});
 
 
 
 box.addEventListener('mousemove', (e) => {
     if(isDragging == true){
-        let mouseX = e.clientX;
-        let mouseY = e.clientY;
-        console.log(e.clientX,e.clientY);
-        box.style.left = mouseX + 'px';
-        box.style.top = mouseY + 'px';
+        const diffX = e.clientX - originX;
+        const diffY = e.clientY - originY;
+        const endOfXPoint = areaWidth - boxWidth;
+        const endOfYPoint = areaHeight - boxHeight;
+        console.log(diffX, diffY, endOfXPoint, endOfYPoint);
+        box.style.left = `${Math.min(Math.max(0, originLeft + diffX), endOfXPoint)}px`
+        box.style.top = `${Math.min(Math.max(0, originTop + diffY), endOfYPoint)}px`
     }
 })

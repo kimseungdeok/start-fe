@@ -5,22 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        #box {
-          position: absolute;
-          top: 100;
-          left: 0;
-          width: 100px;
-          height: 100px;
-          background-color: grey;
-          text-align: center;
-        
-        }
-  
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+      }
+      .area {
+        width: 100vw;
+        height: 100vh;
+      }
+      #box {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background-color: grey;
+        text-align: center;
+      }
       </style>
   </head>
   <body>
-
-
+    <div class="area">
     <ol>
       <li>박스를 누르면 드래그가 시작됩니다 (mousedown 이벤트)</li>
       <li>
@@ -29,8 +40,10 @@
       </li>
       <li>클릭을 해제하면 드래그가 멈춥니다 (mouseup 이벤트)</li>
     </ol>
-    <div id="box">
-      Drag me!
+
+      <div id="box">
+        Drag me!
+      </div>
     </div>
     <script src="quiz4.js"></script>
   </body>
