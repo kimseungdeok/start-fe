@@ -1,34 +1,40 @@
-const container = document.querySelector('.area');
-const box = container.getElementById('box');
+const box = document.getElementById('box');
 
-const {width:containerWidth, height:containerHeight} = container.getBoundingClientRect();
-const {witdh:boxWidth, height: boxHeight} = box.getBoundingClientRect();
+const clientRect = box.getBoundingClientRect();
+
 let isDragging = null;
-let originLeft = null;
-let originTop = null;
 let originX = null;
 let originY = null;
+let mouseX = null;
+let mouseY = null;
 
-box.addEventListener('mousedown', (e) => {
-    isDragging = ture;
-    originX = e.clientX;
-    originY = e.clientY;
-    originLeft = box.offsetLeft;
-    originTop = box.offsetTop;
-});
+console.log(clientRect)
 
-document.addEventListener('mouseup', (e)=>{
+box.addEventListener('mousedown', getLocation)
+
+function getLocation(){
+    isDragging = true;
+    originX = clientRect.x;
+    originY = clientRect.y;
+    console.log(originX, originY);
+    
+}
+
+function unclickMouse(){
     isDragging = false;
-})
+}
 
-document.addEventListener('mousemove', (e)=> {
-    if(isDragging){
-        const diffX = e.clientX - originX;
-        const diffY = e.clientY - originY;
-        const endOfXPoint = containerWidth - boxWidth;
-        const endOfYPoint = containerHeight - boxHeight;
-        box.style.left = `${Math.min(Math.max(0, originLeft+diffX), endOfXPoint)}px`
-        box.style.top = `${Math.min(Math.max(0, originTop+diffY), endOfYPoint)}px`
+
+box.addEventListener('mouseup', unclickMouse)
+
+
+
+box.addEventListener('mousemove', (e) => {
+    if(isDragging == true){
+        let mouseX = e.clientX;
+        let mouseY = e.clientY;
+        console.log(e.clientX,e.clientY);
+        box.style.left = mouseX + 'px';
+        box.style.top = mouseY + 'px';
     }
 })
-
