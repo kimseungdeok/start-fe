@@ -1,10 +1,11 @@
-const area = document.querySelector('.area');
+
+const body = document.querySelector('body');
 const box = document.getElementById('box');
 
-const {width:areaWidth, height:areaHeight} = area.getBoundingClientRect();
+const {width:bodyWidth, height:bodyHeight} = body.getBoundingClientRect();
 const {width:boxWidth, height:boxHeight} = box.getBoundingClientRect();
 
-console.log(areaWidth, areaHeight, boxWidth, boxHeight);
+console.log(bodyWidth, bodyHeight, boxWidth, boxHeight);
 
 let isDragging = null;
 let originX = null;
@@ -33,8 +34,8 @@ box.addEventListener('mousemove', (e) => {
     if(isDragging == true){
         const diffX = e.clientX - originX;
         const diffY = e.clientY - originY;
-        const endOfXPoint = areaWidth - boxWidth;
-        const endOfYPoint = areaHeight - boxHeight;
+        const endOfXPoint = bodyWidth - boxWidth;
+        const endOfYPoint = bodyHeight - boxHeight;
         console.log(diffX, diffY, endOfXPoint, endOfYPoint);
         box.style.left = `${Math.min(Math.max(0, originLeft + diffX), endOfXPoint)}px`
         box.style.top = `${Math.min(Math.max(0, originTop + diffY), endOfYPoint)}px`
