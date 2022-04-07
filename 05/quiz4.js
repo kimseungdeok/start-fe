@@ -1,4 +1,3 @@
-
 const body = document.querySelector('body');
 const box = document.getElementById('box');
 
