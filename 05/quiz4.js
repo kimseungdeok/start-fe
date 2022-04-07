@@ -36,7 +36,7 @@ box.addEventListener('mousemove', (e) => {
         const endOfXPoint = bodyWidth - boxWidth;
         const endOfYPoint = bodyHeight - boxHeight;
         console.log(diffX, diffY, endOfXPoint, endOfYPoint);
-        box.style.left = `${Math.min(Math.max(0, originLeft + diffX), endOfXPoint)}px`
-        box.style.top = `${Math.min(Math.max(0, originTop + diffY), endOfYPoint)}px`
+        box.style.left = `${originLeft + diffX}px`
+        box.style.top = `${originTop + diffY}px`
     }
 })
