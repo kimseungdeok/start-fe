@@ -33,9 +33,7 @@ box.addEventListener('mousemove', (e) => {
     if(isDragging == true){
         const diffX = e.clientX - originX;
         const diffY = e.clientY - originY;
-        const endOfXPoint = bodyWidth - boxWidth;
-        const endOfYPoint = bodyHeight - boxHeight;
-        console.log(diffX, diffY, endOfXPoint, endOfYPoint);
+
         box.style.left = `${originLeft + diffX}px`
         box.style.top = `${originTop + diffY}px`
     }

@@ -7,30 +7,23 @@ function addRed() {
     console.log(document.querySelectorAll('.box'))
 }
 
-document.querySelector('.add-red').addEventListener('click', addRed)
-
 function addBox(){
     let str = '';
     str += `<div class="box"></div>`;
     document.querySelector('.box-container').innerHTML += str;
 }
 
-document.querySelector('.add-btn').addEventListener('click',addBox)
-
 function deleteBox(){
     var $boxElement = document.querySelector('.box');
     $boxElement.remove();
 }
 
-document.querySelector('.delete-btn').addEventListener('click',deleteBox)
 
 function resetBox(){
     document.querySelector('.box-container').innerHTML = '';
 }
-document.querySelector('.reset-btn').addEventListener('click',resetBox)
 
 function textBox(){
-    
     var txt = document.querySelector('.txt').value
     // var $boxElement = document.querySelector('.box');
     // $boxElement.innerHTML = `<div class="box">${txt}</div>`
@@ -42,9 +35,6 @@ function textBox(){
     }
 }
 
-
-document.querySelector('.text-btn').addEventListener('click',textBox)
-
 function toggleBox(){
     let $box = document.querySelectorAll('.box')
     for(let i = 0; i < $box.length; i++){
@@ -53,9 +43,6 @@ function toggleBox(){
     }
     
 }
-
-document.querySelector('.toggle-btn').addEventListener('click',toggleBox)
-
 
 function imageBox(){
     let $box = document.querySelectorAll('.box');
@@ -67,8 +54,12 @@ function imageBox(){
         document.querySelector('.box-container').innerHTML += str;
     }
     $boxElement.innerHTML = `<div class="box"><img src="https://i.imgur.com/69NjYBH.png"></div>`
-
-
 }
 
+document.querySelector('.add-red').addEventListener('click', addRed)
+document.querySelector('.add-btn').addEventListener('click',addBox)
+document.querySelector('.delete-btn').addEventListener('click',deleteBox)
+document.querySelector('.reset-btn').addEventListener('click',resetBox)
+document.querySelector('.text-btn').addEventListener('click',textBox)
+document.querySelector('.toggle-btn').addEventListener('click',toggleBox)
 document.querySelector('.image-btn').addEventListener('click',imageBox)
