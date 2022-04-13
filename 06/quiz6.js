@@ -1,16 +1,11 @@
-const btn = document.getElementById('btn');
+const $btn = document.getElementById('btn');
+const $result = document.getElementById('result');
+const $num = document.getElementById('num');
 
-btn.addEventListener('click', btnClick);
-
-function btnClick(){
+$btn.addEventListener('click', () => {
     let str = '';
-    let value = document.getElementById('num').value;
-    console.log(value);
+    let value = $num.value;
     let numValue = parseInt(value);
-    console.log(numValue, typeof(numValue));
-    let result = document.getElementById('result');
-    console.log(typeof(numValue))
-    console.log(Number.isNaN(numValue))
     if(Number.isNaN(numValue)){
         alert('숫자를 입력해주세요.')
     } else {
@@ -18,7 +13,7 @@ function btnClick(){
             str += `<div>${value} x ${i} = ${value * i}</div>`
         }
     }
-    result.innerHTML = str; 
+    $result.innerHTML = str; 
+});
 
-}
 
