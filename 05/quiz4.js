@@ -1,10 +1,9 @@
 const body = document.querySelector('body');
 const box = document.getElementById('box');
 
-const {width:bodyWidth, height:bodyHeight} = body.getBoundingClientRect();
+
 const {width:boxWidth, height:boxHeight} = box.getBoundingClientRect();
 
-console.log(bodyWidth, bodyHeight, boxWidth, boxHeight);
 
 let isDragging = null;
 let originX = null;
