@@ -5,7 +5,7 @@ const $life = document.getElementById('life');
 let count = 1; // 점수
 let lifeCount = 9; // 생명
 
-$box.addEventListener('click', (e) =>{
+$box.addEventListener('click', () =>{
     if(lifeCount < 0) {
         alert('gameover');
     } else {
@@ -15,7 +15,7 @@ $box.addEventListener('click', (e) =>{
     }
 })
 
-$bug.addEventListener('click', (e) => {
+$bug.addEventListener('click', () => {
     $point.innerHTML = count++;
     $life.innerHTML = lifeCount++;
 });
