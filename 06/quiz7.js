@@ -9,11 +9,11 @@ $box.addEventListener('click', () =>{
     if(lifeCount < 0) {
         alert('gameover');
     } else {
-    $life.innerHTML = lifeCount--;
-    $bug.style.left = `${Math.random()*400}px`;
-    $bug.style.top = `${Math.random()*400}px`;
+        $life.innerHTML = lifeCount--;
+        $bug.style.left = `${Math.random()*400}px`;
+        $bug.style.top = `${Math.random()*400}px`;
     }
-})
+});
 
 $bug.addEventListener('click', () => {
     $point.innerHTML = count++;
