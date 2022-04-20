@@ -4,6 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>랜덤값 만들기</title>
+    <style>
+      #box {
+        background-color: lightgray;
+        width: 15.625rem;
+        height: 6.25rem;
+        position: relative;
+      }
+      .innerBox {
+        background-color: white;
+        width: 13.75rem;
+        height: 4.375rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.875rem;
+        line-height: 250%;
+      }
+
+    </style>
   </head>
   <body>
     <div class="wrap">
@@ -15,7 +37,9 @@
         </li>
         <li>랜덤 숫자가 출력중에는 생성버튼이 비활성가 됩니다</li>
       </ul>
-      <div id="box">-</div>
+      <div id="box">
+        <div class="innerBox"></div>
+      </div>
       <hr />
       최소 <input type="text" placeholder="10" id="min" value="10" /> <br />
       최대 <input type="text" placeholder="100" id="max" value="1000" />
