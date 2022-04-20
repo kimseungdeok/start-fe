@@ -12,23 +12,20 @@ $btn.addEventListener('click', () => {
     if(min > max) {
         alert('최소 값이 최대 값보다 큽니다. 다시 입력해주세요.');
     }
-    randomNum = getRandomInt(min, max);
+    else {
+        randomNum = getRandomInt(min, max);
 
-    var movingNum = setInterval(function(){
-        if(i++ < randomNum){
-            $btn.style.visibility='hidden';
-            $innerBox.innerText = i;
-        }else{
-            $btn.style.visibility='visible';
-            clearInterval(movingNum);
-            
-        }
-    },10)
-    // for(i=0; i<randomNum;i++){
-    //     setInterval($innerBox.innerText = i,300)
-    //     // console.log(i);
-    // }
-    // // setInterval($innerBox.innerHTML = randomNum,3000);
+        var movingNum = setInterval(function(){
+            if(i++ < randomNum){
+                $btn.style.visibility='hidden';
+                $innerBox.innerText = i;
+            }else{
+                $btn.style.visibility='visible';
+                clearInterval(movingNum);
+            }
+        },10)
+    }
+
 }) 
 
 function getRandomInt(min, max) {
