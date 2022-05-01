@@ -25,7 +25,6 @@ $btn.addEventListener('click', () => {
             }
         },10)
     }
-
 }) 
 
 function getRandomInt(min, max) {
