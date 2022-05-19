@@ -29,7 +29,7 @@ function search() {
 
         const docs = documents.map((document) => {
         // console.log(document);
-        return document.contents;
+            return document.contents;
         });
 
         // console.log(docs);
