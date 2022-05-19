@@ -4,14 +4,22 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
+    "start": "serve",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
     "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "serve": "^13.0.2",
     "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "dependencies": {
+    "cowsay": "^1.5.0",
+    "query-string": "^7.1.1"
   }
 }
