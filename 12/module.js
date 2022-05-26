@@ -7,7 +7,6 @@ function init() {
 
     console.log(avgResult);
     console.log(randomResult);
-    
 }
 
 init();

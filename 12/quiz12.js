@@ -2,7 +2,6 @@ export function avg() {
     let sum = 0;
     let avg = 0;
     let count = 0;
-    // console.log(arguments[0]);
     if(Array.isArray(arguments[0])){
         for (let i = 0; i < arguments[0].length; i++) {
             count++;
@@ -24,17 +23,10 @@ export function avg() {
             avg = sum / count;
         }
     }
-
-    
-
     return avg;
 }
 
-// console.log(avg(1,2,'a','a',3,'a','b'));
-console.log(avg([3]));
-
 export function random(min, max) {
-    // console.log(typeof(min),typeof(max));
 
     if(max === undefined) {
         max = min;
@@ -47,7 +39,3 @@ export function random(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 }
-
-// console.log(random(3));
-
-
